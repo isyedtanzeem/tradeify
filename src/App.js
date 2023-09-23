@@ -1,12 +1,14 @@
 import React from 'react';
-import Navigation from './components/Navigation';
+import Navigation from './Components/Navigation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Contact from './components/Contact';
-import Blog from './components/Blog';
+import Home from './Pages/Home';
+import Contact from './Pages/Contact';
+import Blog from './Pages/Blog';
+import Footer from './Components/Footer'
 
 function App() {
   return (
+    <>
     <Router>
       <Navigation />
       <Routes>
@@ -15,7 +17,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/home" element={<Home />} />
       </Routes>
+      
     </Router>
+    <Footer />
+    </>
   );
 }
 

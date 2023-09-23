@@ -1,7 +1,7 @@
 // src/components/Home.js
 
 import React from 'react';
-import HeroSlider from '../components/HeroSlider'; // Use 'HeroSlider' with an uppercase 'H'
+import HeroSlider from './HeroSlider'; // Use 'HeroSlider' with an uppercase 'H'
 
 
 const About = () => {
