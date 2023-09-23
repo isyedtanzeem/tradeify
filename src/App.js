@@ -1,22 +1,21 @@
-// App.js
-
 import React from 'react';
 import Navigation from './components/Navigation';
-import Home from './components/Home'
-import { BrowserRouter as Router, Route,Routes } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Contact from './components/Contact';
+import Blog from './components/Blog';
 
 function App() {
   return (
-    <div>
-      <Router>
+    <Router>
       <Navigation />
       <Routes>
-      <Route exact path="/" component={Home}></Route>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
-      </Router>
-     
-    </div>
+    </Router>
   );
 }
 

@@ -6,8 +6,17 @@ import HeroSlider from '../components/HeroSlider'; // Use 'HeroSlider' with an u
 
 const Home = () => {
   return (
-    <div>
+    <div
+    style={{
+      display: 'flex',
+      justifyContent: 'Right',
+      alignItems: 'Right',
+      height: '100vh'
+    }}
+  >
+      
       <HeroSlider />
+      
 
     </div>
   );

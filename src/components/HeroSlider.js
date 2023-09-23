@@ -1,46 +1,26 @@
 // src/components/HeroSlider.js
 
-import React, { useState } from 'react';
-import '../css/Heroslider.css'; // Create this CSS file for styling
+import React from 'react';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import slide1 from '../images/stock.jpg'
 
 const HeroSlider = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = [
-    {
-      image: '/path/to/your/image1.jpg',
-      legend: 'Legend 1',
-    },
-    {
-      image: '/path/to/your/image2.jpg',
-      legend: 'Legend 2',
-    },
-    {
-      image: '/path/to/your/image3.jpg',
-      legend: 'Legend 3',
-    },
-  ];
-
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === slides.length - 1 ? 0 : prevSlide + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? slides.length - 1 : prevSlide - 1));
-  };
-
   return (
-    <div className="hero-slider">
-      <button className="slider-btn" onClick={prevSlide}>
-        &#8249;
-      </button>
-      <div className="slider-content">
-        <img src={slides[currentSlide].image} alt={`Slider ${currentSlide + 1}`} />
-        <p className="legend">{slides[currentSlide].legend}</p>
+    <Carousel showArrows={true} infiniteLoop={true} autoPlay={true} interval={5000} showStatus={false} showThumbs={false}>
+      <div>
+        <img src={slide1} style={{height: "540px"}} alt="Slider 1" />
+        <p className="legend">Legend 1</p>
       </div>
-      <button className="slider-btn" onClick={nextSlide}>
-        &#8250;
-      </button>
-    </div>
+      <div>
+        <img src="/path/to/your/image2.jpg" alt="Slider 2" />
+        <p className="legend">Legend 2</p>
+      </div>
+      <div>
+        <img src="/path/to/your/image3.jpg" alt="Slider 3" />
+        <p className="legend">Legend 3</p>
+      </div>
+    </Carousel>
   );
 };
 
